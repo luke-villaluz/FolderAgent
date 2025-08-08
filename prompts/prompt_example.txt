@@ -1,0 +1,13 @@
+this is my prompt
+
+here is my combined text: {COMBINED_TEXT}
+
+return a json object with EXACTLY ONE valid JSON object with these fields:
+
+{
+    "cool_fact": "one interesting fact from the text",
+    "most_common_topic": "the topic that appears the most often",
+    "summary_in_one_sentence": "give me a single sentence summary of all this text
+}
+
+make sure the output is valid JSON and all 3 fields are present
