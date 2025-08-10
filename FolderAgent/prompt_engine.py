@@ -1,12 +1,8 @@
 """
 Prompt engine for formatting text into LLM prompts.
 """
-
 import os
-from dotenv import load_dotenv
-
-# Load environment variables
-load_dotenv()
+from FolderAgent.config import PROMPT
 
 
 class PromptEngine:
@@ -16,7 +12,7 @@ class PromptEngine:
     def load_prompt_template(self, template_name=None):
         """Load a prompt template from the prompts directory."""
         if template_name is None:
-            template_name = os.getenv("PROMPT")
+            template_name = PROMPT
         
         template_path = os.path.join(self.prompts_dir, template_name)
         

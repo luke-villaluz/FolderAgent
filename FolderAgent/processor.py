@@ -15,6 +15,7 @@ class FolderScanner:
         self.word_app = None
     
     def scan_folder(self, folder_path):
+        print(f"Scanning folder: {folder_path}")
         results = {
             'files_processed': 0,
             'total_text_length': 0,
@@ -26,11 +27,14 @@ class FolderScanner:
         
         try:
             for root, dirs, files in os.walk(folder_path):
+                print(f"Root: {root}, Files: {files}")
                 for file in files:
                     file_path = os.path.join(root, file)
+                    print(f"Processing file: {file_path}")
                     
                     if file.endswith(('.pdf', '.doc', '.docx')):
                         text = self._extract_text(file_path)
+                        print(f"Extracted text length: {len(text)}")
                         
                         if text.strip():
                             results['files_processed'] += 1
@@ -43,6 +47,7 @@ class FolderScanner:
             self._cleanup_word()
         
         results['combined_text'] = '\n\n'.join(file_texts)
+        print(f"Total files processed: {results['files_processed']}")
         return results
     
     def _extract_text(self, file_path):

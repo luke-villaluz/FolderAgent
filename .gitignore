@@ -5,3 +5,5 @@ output/
 __pycache__/
 *.pyc
 .env
+tests/test_output.xlsx
+tests/test folder
