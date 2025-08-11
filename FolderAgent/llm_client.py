@@ -1,6 +1,7 @@
 import requests
 import json
-from FolderAgent.config import PERPLEXITY_API_KEY, PERPLEXITY_MODEL, PERPLEXITY_BASE_URL
+import os
+from FolderAgent.config import PERPLEXITY_API_KEY, PERPLEXITY_MODEL, PERPLEXITY_BASE_URL, MAX_TOKENS
 
 
 class LLMClient:
@@ -19,7 +20,7 @@ class LLMClient:
         data = {
             "model": self.model,
             "messages": [{"role": "user", "content": prompt}],
-            "max_tokens": 1000
+            "max_tokens": int(MAX_TOKENS)
         }
         
         try:
@@ -33,6 +34,8 @@ class LLMClient:
             raise Exception(f"API request failed: {e}")
         except KeyError as e:
             raise Exception(f"Unexpected API response format: {e}")
+        except Exception as e:
+            raise Exception(f"Unexpected error: {e}")
     
     def get_json_response(self, prompt):
         response_text = self.send_prompt(prompt)

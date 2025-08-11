@@ -9,7 +9,6 @@ setup(
         "pytesseract==0.3.10", 
         "Pillow==10.1.0",
         "python-docx==1.1.0",
-        "pywin32==306",
         "python-dotenv==1.0.0",
         "requests==2.31.0",
         "openpyxl==3.1.2",

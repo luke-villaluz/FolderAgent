@@ -10,3 +10,6 @@ PROMPT = os.getenv("PROMPT")
 PERPLEXITY_API_KEY = os.getenv("PERPLEXITY_API_KEY")
 PERPLEXITY_MODEL = os.getenv("PERPLEXITY_MODEL")
 PERPLEXITY_BASE_URL = os.getenv("PERPLEXITY_BASE_URL")
+
+# Add these missing ones:
+MAX_TOKENS = os.getenv("MAX_TOKENS", "1000")
