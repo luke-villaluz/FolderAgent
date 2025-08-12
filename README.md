@@ -1,5 +1,3 @@
-NOTE FINISH THIS WHEN IM DONE
-
 At a high level this project is designed to take in a folder of folders (the subfolders representing clients, vendors, etc)
 
 For each folder it does the following:
